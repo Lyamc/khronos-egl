@@ -125,15 +125,12 @@
 #![allow(non_upper_case_globals)]
 #![allow(non_snake_case)]
 
-extern crate libc;
-
 use std::convert::{TryFrom, TryInto};
 use std::ffi::CStr;
 use std::ffi::CString;
+use std::ffi::{c_char, c_uint, c_void};
 use std::fmt;
 use std::ptr;
-
-use libc::{c_char, c_uint, c_void};
 
 /// EGL API provider.
 pub trait Api {
@@ -1906,7 +1903,7 @@ macro_rules! api {
 
 		#[cfg(feature="static")]
 		mod ffi {
-			use libc::{c_char, c_void};
+			use std::ffi::{c_char, c_void};
 
 			use super::{
 				Attrib, Boolean, EGLClientBuffer, EGLConfig, EGLContext, EGLDisplay, EGLImage, EGLSurface,
