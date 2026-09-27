@@ -1,5 +1,7 @@
 # Rust bindings for EGL
 
+This is a fork of `khronos-egl` 6.0.0, kept for [cabin](https://github.com/Lyamc/cabin). Upstream depends on the `libc` crate for `c_char`, `c_uint`, and `c_void`. Those are the same types `std::ffi` already provides, so this fork uses `std::ffi` and drops the `libc` dependency. The EGL API is unchanged. wgpu's GLES backend links this crate.
+
 <table><tr>
   <td><a href="https://docs.rs/khronos-egl">Documentation</a></td>
   <td><a href="https://crates.io/crates/khronos-egl">Crate informations</a></td>
